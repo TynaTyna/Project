@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> School  </title>
+</head>
+
+ <style>
+   body{
+    background-color: #F0FFFF; /* Цвет фона веб-страницы */
+   }
+
+  </style>
+
+
+
+  </style>
+<body>
+
+<H1>Menu</H1>
+<ul>
+ <li><a href="/index/"> Главная </a></li>
+    <li><a href="/"> Каталог и поиск </a></li>
+ <li><a href="/courses/new/"> Добавление курса </a></li>
+     <li><a href="/admin/"> Админка </a></li>
+    <li><a href="/admin/school/course/"> Фильтры и юзеры </a></li>
+    <li><a href="/user/login/"> Авторизация </a></li>
+
+</ul>
+
+<p>{%  if user.is_authenticated %}
+    {{ user }}<a href="{% url "logout"%}"> logout</a>
+    {%  else %}
+    <a href="{% url "login"%}"> login</a>
+{% endif %}</p>
+{%  include "school/messages.html" %}
+
+
+{%  block "content" %}
+{%  endblock %}
+
+
+
+</body>
+</html>

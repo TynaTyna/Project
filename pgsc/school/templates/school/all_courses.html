@@ -1,0 +1,29 @@
+{%  extends "school/base.html" %}
+
+
+{%  block "content" %}
+    <!DOCTYPE html>
+<html>
+<head>
+    <title> Courses </title>
+</head>
+<body>
+<form role="search">
+    <input name="search" type="text" placeholder="Enter keyword here...">
+    <button type="submit">Search</button>
+</form>
+
+
+{% if prof %}
+<H1>{{ prof }}</H1>
+{% endif %}
+{% for item in courses %}
+    <p> {{ item.name }} ({{ item.st_date }}) </p>
+{% endfor %}
+
+</body>
+</html>
+
+{%  endblock %}
+
+

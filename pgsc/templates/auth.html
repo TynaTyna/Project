@@ -1,0 +1,15 @@
+
+{%  extends "school/base.html" %}
+
+{% block “title” %}AUTH USER{%  endblock %}
+
+{%  block "content" %}
+LOGIN:
+<form method="POST">
+    {%  csrf_token %}
+    <table>
+        {{ form }}
+    </table>
+    <input type="submit" value="Submit" />
+</form>
+{%  endblock %}

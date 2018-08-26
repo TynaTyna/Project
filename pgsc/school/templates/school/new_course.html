@@ -1,0 +1,14 @@
+
+{%  extends "school/base.html" %}
+
+
+{%  block "content" %}
+New Course:
+<form method="POST">
+    {%  csrf_token %}
+    <table>
+        {{ form }}
+    </table>
+    <input type="submit" value="Submit" />
+</form>
+{%  endblock %}
